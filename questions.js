@@ -258,7 +258,7 @@ const questions = [
     {
         level: "beginner",
         category: "A2",
-        question: "次のうち、Pro Tools Studio 新規セッション作成時に選択できる。オーディオファイルフォーマットはどれか、番号で答えなさい。",
+        question: "次のうち、Pro Tools Studio 新規セッション作成時に選択できるオーディオファイルフォーマットはどれか、番号で答えなさい。",
         choices: [
             "BWF(.WAV)",
             "MP3",
@@ -339,7 +339,7 @@ const questions = [
         question: "ミックス・ウィンドウと編集ウィンドウを切り替える、または表示する方法を次の中から選び、番号で答えなさい。",
         choices: [
             "[Command] + [=](Mac)/[Control] +[=](Win)",
-            "[Command] + [:]/[Control + [=])(Win)",
+            "[Command] + [:]/[Control] + [=](Win)",
             "[Command] + [_](Mac)/[Control] + [_](Win)",
             "[Command] + [0](Mac)/[Control] + [0](Win)"
         ],
@@ -349,7 +349,7 @@ const questions = [
     {
         level: "beginner",
         category: "A2",
-        question: "Pro Tools Studioで、Play、Rec、カウントオブを表示できるコントロール・ウィンドウはなんと呼ぶか、次の中から選び、番号で答えなさい。",
+        question: "Pro Tools Studioで、Play、Rec、カウントオフを表示できるコントロール・ウィンドウはなんと呼ぶか、次の中から選び、番号で答えなさい。",
         choices: [
             "セッション設定ウィンドウ",
             "メモリー・ロケーション・ウィンドウ",
@@ -527,7 +527,7 @@ const questions = [
         question: "オーディオ・トラックの波形の振幅を示す目盛の上をクリックしてアクセスできるのはどれか、次の中から選び、番号で答えなさい。",
         choices: [
             "タイムベース・ルーラー・ビュー",
-            "トラックの高さセレクタ ポップアップメニュー",
+            "トラックの高さセレクタ・ポップアップメニュー",
             "ズーマー・ツール",
             "コンダクター・トラック・ビュー"
         ],
@@ -1620,7 +1620,7 @@ const questions = [
     level: "beginner",
     category: "C1",
     image: "images/questionsC1-2.png",
-    question: "右図のセンド・アウトプット・ウィンドウの矢印が指し示すボタン（※「PJM」または「PRE」と書かれたボタン）を押した場合、どのような動作をするか、次の中から選び、番号で答えなさい。",
+    question: "右図のセンド・アウトプット・ウィンドウの矢印が指し示すボタン「PRE」と書かれたボタンを押した場合、どのような動作をするか、次の中から選び、番号で答えなさい。",
     choices: [
         "センド・アウトプット・ウィンドウの表示幅を切り換える。",
         "モノ・センド/ステレオ・センドを切り換える。",
