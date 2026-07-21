@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pro Tools 四択問題集</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- ホーム画面 -->
+	<div id="home-screen" class="container">
+		<h1>🎵 Pro Tools 四択問題集</h1>
+		<p class="subtitle">出題モードを選択してください</p>
+
+		<button id="beginner-btn" class="mode-btn">🟢 初級問題</button>
+		<button id="intermediate-btn" class="mode-btn">🟡 中級問題</button>
+		<button id="technik-btn" class="mode-btn technik-btn">🟣 技術問題</button>
+		<button id="all-btn" class="mode-btn">🔵 全問題</button>
+		<button id="random-btn" class="mode-btn">🎲 ランダムモード</button>
+	</div>
+
+	<!-- 初級メニュー -->
+	<div id="beginner-menu" class="container hidden">
+		<h1>🟢 初級問題</h1>
+		<p class="subtitle">範囲を選択してください</p>
+
+		<div class="button-grid">
+			<button id="a1-btn">A1</button>
+			<button id="a2-btn">A2</button>
+			<button id="b1-btn">B1</button>
+			<button id="b2-btn">B2</button>
+			<button id="c1-btn">C1</button>
+			<button id="c2-btn">C2</button>
+			<button id="c3-btn">C3</button>
+			<button id="c4-btn">C4</button>
+			<button id="d1-btn">D1</button>
+			<button id="d2-btn">D2</button>
+			<button id="d3-btn">D3</button>
+			<button id="d4-btn">D4</button>
+		</div>
+
+		<button id="back-btn" class="mode-btn">← ホームへ戻る</button>
+	</div>
+
+	<!-- 中級メニュー -->
+	<div id="intermediate-menu" class="container hidden">
+		<h1>🟡 中級問題</h1>
+		<p class="subtitle">範囲を選択してください</p>
+
+		<div class="button-grid">
+			<button id="intermediate-a1-btn">A1</button>
+			<button id="intermediate-a2-btn">A2</button>
+			<button id="intermediate-b1-btn">B1</button>
+			<button id="intermediate-b2-btn">B2</button>
+			<button id="intermediate-c1-btn">C1</button>
+			<button id="intermediate-c2-btn">C2</button>
+			<button id="intermediate-c3-btn">C3</button>
+			<button id="intermediate-c4-btn">C4</button>
+			<button id="intermediate-d1-btn">D1</button>
+			<button id="intermediate-d2-btn">D2</button>
+			<button id="intermediate-d3-btn">D3</button>
+			<button id="intermediate-d4-btn">D4</button>
+		</div>
+
+		<button id="intermediate-back-btn" class="mode-btn">← ホームへ戻る</button>
+	</div>
+
+	<!-- 問題画面 -->
+	<div id="quiz-screen" class="container hidden">
+		<header>
+			<h1>🎵 Pro Tools 四択問題集</h1>
+			<div class="status">
+				<span id="question-number"></span>
+			</div>
+			<div class="progress">
+				<div id="progress-bar"></div>
+			</div>
+		</header>
+
+		<main>
+			<div class="quiz-box">
+				<img id="question-image" class="hidden" src="" alt="問題画像">
+				<h2 id="question">問題文</h2>
+				<div id="choices" class="choices"></div>
+			</div>
+
+			<div id="finish" class="finish hidden">
+				<h2>🎉 試験終了！</h2>
+				<p id="final-score"></p>
+				<p id="final-rate"></p>
+
+				<div class="result-actions">
+					<button id="retry-btn" class="mode-btn">🔄 もう一度挑戦</button>
+					<button id="result-home-btn" class="mode-btn home-return-btn">🏠 ホームへ戻る</button>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="questions.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

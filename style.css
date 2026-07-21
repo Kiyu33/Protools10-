@@ -1,0 +1,452 @@
+/* ===========================
+   基本設定 & ガウスグラデーション背景
+=========================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #0c0b14;
+	color: white;
+	font-family: "Yu Gothic", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 30px 0;
+	overflow-x: hidden;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle at 40% 40%, rgba(127, 0, 255, 0.15) 0%, transparent 40%),
+		radial-gradient(circle at 60% 60%, rgba(0, 191, 255, 0.12) 0%, transparent 45%);
+	filter: blur(100px);
+	z-index: -1;
+	pointer-events: none;
+}
+
+.container {
+	width: 90%;
+	max-width: 900px;
+	text-align: center;
+}
+
+.container:not(.hidden) {
+	animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.hidden {
+	display: none !important;
+}
+
+/* ===========================
+   UIデザイン設定
+=========================== */
+
+h1 {
+	margin-bottom: 20px;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.subtitle {
+	color: #cccccc;
+	margin-bottom: 30px;
+	font-size: 18px;
+}
+
+/* ===========================
+   ボタン基本
+=========================== */
+
+button {
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	padding: 15px;
+	font-size: 18px;
+	transition: background-color 0.2s, transform 0.2s;
+}
+
+button:disabled {
+	cursor: default;
+}
+
+.mode-btn {
+	width: 100%;
+	margin: 12px 0;
+	background: #2d7ff9;
+	color: white;
+}
+
+.mode-btn:hover:not(:disabled) {
+	background: #4b95ff;
+	transform: translateY(-1px);
+}
+
+.technik-btn {
+	background: #7f38d1;
+}
+
+.technik-btn:hover:not(:disabled) {
+	background: #9654e6;
+}
+
+.home-return-btn {
+	background: #444;
+}
+
+/* ===========================
+   Gridメニュー（A1〜D4）
+=========================== */
+
+.button-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+	margin: 30px 0;
+}
+
+.button-grid button {
+	background: #333;
+	color: white;
+}
+
+.button-grid button:hover {
+	background: #00bfff;
+}
+
+/* ===========================
+   問題画面要素
+=========================== */
+
+.quiz-box {
+	margin-top: 30px;
+}
+
+#question {
+	margin: 30px 0;
+	font-size: 30px;
+	line-height: 1.6;
+	white-space: pre-wrap;
+}
+
+#question-image {
+	width: 400px;
+	height: 250px;
+	object-fit: contain;
+	display: block;
+	margin: 20px auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.choices {
+	display: grid;
+	gap: 15px;
+}
+
+.choice-btn {
+	background: #444;
+	color: white;
+	padding: 18px;
+	font-size: 20px;
+	text-align: left;
+}
+
+.choice-btn:hover:not(:disabled) {
+	background: #555;
+}
+
+.choice-btn.correct-flash {
+	background: #00ff88 !important;
+	color: white !important;
+	font-weight: bold;
+	box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+}
+
+.choice-btn.incorrect-flash {
+	background: #ff5555 !important;
+	color: white !important;
+	box-shadow: 0 0 12px rgba(255, 85, 85, 0.4);
+}
+
+/* ===========================
+   技術問題
+=========================== */
+
+.technik-choices {
+	gap: 22px;
+	text-align: left;
+}
+
+.sub-question-group {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 14px;
+	padding: 20px;
+}
+
+.sub-question-label {
+	margin-bottom: 14px;
+	font-size: 22px;
+	color: #d9b7ff;
+}
+
+.sub-choice-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+}
+
+.sub-choice-label {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-height: 58px;
+	padding: 14px;
+	background: #3e3e48;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	font-size: 17px;
+	cursor: pointer;
+	transition: background-color 0.2s, border-color 0.2s;
+}
+
+.sub-choice-label:hover {
+	background: #50505c;
+}
+
+.sub-choice-label:has(input:checked) {
+	border-color: #ad72ff;
+	background: #513a70;
+}
+
+.sub-choice-label input {
+	flex: 0 0 auto;
+	width: 19px;
+	height: 19px;
+	accent-color: #9f5cff;
+}
+
+.sub-choice-label.correct-choice {
+	background: #147a50 !important;
+	border-color: #00ff88 !important;
+}
+
+.sub-choice-label.incorrect-choice {
+	background: #8b3038 !important;
+	border-color: #ff5555 !important;
+}
+
+.technik-submit-btn {
+	margin-top: 8px;
+	background: #7f38d1;
+}
+
+.technik-submit-btn:hover:not(:disabled) {
+	background: #9654e6;
+}
+
+/* ===========================
+   プログレスバー
+=========================== */
+
+.progress {
+	width: 100%;
+	height: 12px;
+	background: #444;
+	border-radius: 20px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+#progress-bar {
+	width: 0%;
+	height: 100%;
+	background: #00ff88;
+	transition: width 0.3s ease;
+}
+
+/* ===========================
+   リザルト・答え合わせ
+=========================== */
+
+.finish {
+	margin-top: 40px;
+}
+
+#final-score,
+#final-rate {
+	font-size: 26px;
+	margin: 15px 0;
+}
+
+.rank {
+	font-size: 36px;
+	margin: 20px 0;
+	font-weight: bold;
+}
+
+.result-actions {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.result-actions .mode-btn {
+	width: auto;
+	margin: 0;
+	padding: 15px 30px;
+}
+
+#result-list {
+	margin-top: 40px;
+	text-align: left;
+}
+
+#result-list > h3 {
+	margin: 30px 0 15px;
+	font-size: 24px;
+}
+
+.answer-item {
+	background: #1e1e1e;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+.answer-item h4 {
+	font-size: 22px;
+	margin-bottom: 14px;
+}
+
+.answer-item img {
+	width: 100%;
+	max-width: 350px;
+	height: auto;
+	display: block;
+	margin: 15px auto;
+	border-radius: 10px;
+}
+
+.answer-item p {
+	margin: 10px 0;
+	line-height: 1.6;
+	white-space: pre-wrap;
+}
+
+.sub-result {
+	margin-top: 18px;
+	padding: 14px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 10px;
+}
+
+.sub-result h5 {
+	font-size: 19px;
+	color: #d9b7ff;
+}
+
+.result-judgment {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.result-correct {
+	color: #00ffaa;
+}
+
+.result-incorrect {
+	color: #ff5555;
+}
+
+/* ===========================
+   スマホ対応
+=========================== */
+
+@media (max-width: 700px) {
+	body {
+		align-items: flex-start;
+		padding: 20px 0;
+	}
+
+	.container {
+		width: 94%;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	.subtitle {
+		font-size: 16px;
+	}
+
+	#question {
+		font-size: 21px;
+		line-height: 1.55;
+	}
+
+	.button-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+
+	button {
+		font-size: 16px;
+		padding: 12px;
+	}
+
+	.choice-btn {
+		font-size: 17px;
+		padding: 15px;
+	}
+
+	#question-image,
+	.answer-item img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.sub-choice-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.sub-question-group {
+		padding: 15px;
+	}
+
+	.sub-question-label {
+		font-size: 20px;
+	}
+
+	.sub-choice-label {
+		font-size: 16px;
+	}
+
+	.result-actions {
+		flex-direction: column;
+	}
+
+	.result-actions .mode-btn {
+		width: 100%;
+	}
+}
