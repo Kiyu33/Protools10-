@@ -159,7 +159,7 @@ const questions = [
     },
     {
         level: "beginner",
-
+		category: "A1",
         question: "I/O設定をインポートする際、どの形式のファイルをインポートすればよいか、次の中から選び、番号で答えなさい。",
         choices: [
             ".ptf",
