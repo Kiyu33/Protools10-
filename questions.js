@@ -6023,7 +6023,7 @@ const questions = [
 			"ファイル名が同じなら .L / .R がなくても認識してくれる。",
 			"ファイル名が異なっている場合。"
 		],
-		answer: 3
+		answer: 0
 	},
 
 	{
@@ -6036,7 +6036,7 @@ const questions = [
 			"AIFF",
 			"AKAI"
 		],
-		answer: 0
+		answer: 3
 	},
 
 	{
@@ -6049,7 +6049,7 @@ const questions = [
 			"16ビットから24ビットへ上げる場合",
 			"32ビットから16ビットへ下げる場合"
 		],
-		answer: 2
+		answer: 0
 	},
 
 	{
@@ -6062,7 +6062,7 @@ const questions = [
 			"SMF (Standard MIDI File)",
 			"RTF (Rich Text Format)"
 		],
-		answer: 1
+		answer: 2
 	},
     	{
 		level: "intermediate",
@@ -6074,7 +6074,7 @@ const questions = [
 			"【オフラインのサテライトメディアとしてインポート】",
 			"【ソースメディアからコンパクト化】"
 		],
-		answer: 0
+		answer: 1
 	},
 
 	{
@@ -6281,7 +6281,7 @@ const questions = [
 			"MIDIトラックの名前をダブルクリックする。",
 			"[Command] (Mac) / [Control] (Win) + [=] を押す。"
 		],
-		answer: 0
+		answer: 1
 	},
 
 	{
@@ -6295,7 +6295,7 @@ const questions = [
 			"リアルタイム・プロパティ",
 			"インストゥルメント"
 		],
-		answer: 1
+		answer: 0
 	},
 
 	{
@@ -6308,7 +6308,7 @@ const questions = [
 			"AUXインプット",
 			"ビデオ"
 		],
-		answer: 0
+		answer: 1
 	},
 
 	{
@@ -6321,7 +6321,7 @@ const questions = [
 			"1-255",
 			"1-256"
 		],
-		answer: 1
+		answer: 0
 	},
 
 	{
@@ -6357,10 +6357,10 @@ const questions = [
 		category: "D3",
 		question: "Pro ToolsはセッションのMIDIデータをファイルとしてエクスポートできるが、エクスポートしたファイルの拡張子で正しいものを次の中から選び、番号で答えなさい。",
 		choices: [
-			".smf",
-			".mid",
-			".midi",
-			".wav"
+			".pdf",
+			".MAG",
+			".jpg",
+			".sib"
 		],
 		answer: 3
 	},
