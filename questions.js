@@ -6454,7 +6454,7 @@ const questions = [
 			"[Shift]",
 			"[Control] (Mac) / [Start] (Win)"
 		],
-		answer: 3
+		answer: 0
 	},
 
 	{
